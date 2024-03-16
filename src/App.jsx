@@ -1,14 +1,28 @@
-import { useState } from 'react'
+import { useState , useMemo, useEffect } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import { ImageProfile } from './components/ImageProfile'
 import { Title } from './components/Title'
 import moment from 'moment'
+import axios from 'axios'
 import './App.css'
-
+const endpoint ='https://sheetdb.io/api/v1/rskuexkzg2l2t'
 function App() {
-  const [hide, setHide] = useState(false)
+  const [hide, setHide] = useState(false);
+  const [data,setData] = useState([]);
 
+  const callApi = async () => {
+    try {
+      const res = await axios.get(endpoint);
+      const data = res.data;
+      setData(data);
+    } catch (error) {
+      console.error('Error fetching data:', error);
+    }
+  };
+  useEffect(() => {
+    callApi();
+  }, []);
   return (
     
     <main id="main">
@@ -35,7 +49,7 @@ function App() {
             มหาลัยราชภัฏสวนสุนันทา
           </p>
        </Title>
-        
+       
       </div>
       <div className='rightPort'>
         <Title title="profile">
@@ -52,6 +66,17 @@ function App() {
           <p>CSS</p>
           <p>React.Js</p>
           <p>Next.Js</p>       
+        </Title>
+        <Title title="เพื่อนร่วมชั้นเรียน">
+          {data.map((record)=>{
+            return(
+              <div key={record.name}>
+                <p>{record.name}</p>
+                <p>{record.position}</p>
+                <p>{record.date}</p>
+              </div>
+            )
+          })}
         </Title>
       </div>
     </main>
