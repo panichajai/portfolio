@@ -1,7 +1,7 @@
 import React, { useState, useMemo, useEffect } from 'react';
 import { ImageProfile } from './components/ImageProfile';
 import { Title } from './components/Title';
-import { CgPhone , CgMail , CgFacebook , CgMoreO ,FcGallery } from "react-icons/cg";
+import { CgPhone , CgMail , CgFacebook , CgMoreO } from "react-icons/cg";
 
 import './App.css';
 
@@ -90,7 +90,7 @@ function App() {
                     </div>
                   </div>
                   <Title title="position">
-                    <p><FcGallery /> UX/UI Designer.</p>                  
+                    <p>UX/UI Designer.</p>                  
                   </Title>
                 </div>
               </div>
