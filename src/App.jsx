@@ -2,7 +2,6 @@ import React, { useState, useMemo, useEffect } from 'react';
 import { ImageProfile } from './components/ImageProfile';
 import { Title } from './components/Title';
 import { CgPhone , CgMail , CgFacebook , CgMoreO } from "react-icons/cg";
-
 import './App.css';
 
 const endpoint = 'https://sheetdb.io/api/v1/rskuexkzg2l2t';
@@ -28,7 +27,7 @@ function App() {
         <section className="hero">
           <div className='leftPort'>
             <div className='profile-me'>
-              <ImageProfile image="/src/assets/me.jpg"/>
+              <ImageProfile image="https://scontent.fbkk28-1.fna.fbcdn.net/v/t39.30808-6/357041973_1433079844111503_7845096107201871406_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeGc2EQc-mC8l4eBqaqIhjE3zZEjB1_HCtDNkSMHX8cK0M2oaEsPEAM_edWCW96GSJiUtZvi3hiBBsznw4XsnYj9&_nc_ohc=FpogOxg60LcAX8b-caC&_nc_ht=scontent.fbkk28-1.fna&oh=00_AfB53a2Mw6ua9RMRCEVbBgsUUhbyHSMdsI_Vov8_N4jgjQ&oe=65FCB2DE"/>
             </div>
             <div className='data-me'>
               <Title title="Education">

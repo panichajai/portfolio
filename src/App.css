@@ -1,3 +1,45 @@
+@media screen and (max-width: 768px) {
+  .container {
+    width: 95%; /* Adjust container width for smaller screens */
+  }
+  .hero {
+    flex-direction: column; /* Stack hero content vertically on smaller screens */
+  }
+  .leftPort,
+  .rightPort {
+    width: 100%; /* Make both sections take full width on smaller screens */
+    padding: 20px; /* Reduce padding for smaller screens */
+  }
+  .imageProfile {
+    width: 100%; /* Make the image full width */
+    height: auto; /* Ensure the image maintains its aspect ratio */
+    max-width: 300px; /* Set maximum width for smaller screens */
+    margin: 20px auto; /* Adjust margin for smaller screens */
+    margin-top: 40px; /* Increase top margin for spacing */
+  }
+}
+
+/* General styles outside the media query remain the same */
+#root {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* Fixed a typo here */
+}
+
+.container {
+  width: 90%;
+  max-width: 1440px;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  background-color: #fff;
+}
+
+
+
+/* Other styles... */
+
 #root {
   width: 100%;
   margin: 0;
@@ -85,13 +127,13 @@ h3 {
 }
 .leftPort{
   background-color: #F1E6DE;
-  width: 400px;
+  width: 40%;
   flex-shrink: 0;
   padding: 30px;
   /* text-align: center; */
 }
 .leftPort p{
-  color: #fff;
+  color: black;
 }
 .leftPort h3{
   color: #fff;
@@ -101,11 +143,11 @@ h3 {
   background-color: #FAF5F1;
   /* background-color: #fff; */
   padding: 30px;
-  width: 900px;
+  width: 45%;
   flex-shrink: 0;
 }
 .imageProfile{
-  width: 400px;
+  width: 450px;
   height: 500px;
   margin: 0 auto;
   overflow: hidden;
@@ -176,7 +218,7 @@ h3 {
   grid-gap: 5px;
   .box {
     margin-top: -30px;
-    font-size: 11px;
+    font-size: 14px;
   }
 }
 .profile-me{
@@ -194,4 +236,3 @@ h3 {
     line-height: 130%;
   }
 }
-
