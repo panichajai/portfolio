@@ -1,87 +1,121 @@
-import { useState , useMemo, useEffect } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import { ImageProfile } from './components/ImageProfile'
-import { Title } from './components/Title'
-import moment from 'moment'
-import axios from 'axios'
-import './App.css'
-const endpoint ='https://sheetdb.io/api/v1/rskuexkzg2l2t'
+import React, { useState, useMemo, useEffect } from 'react';
+import { ImageProfile } from './components/ImageProfile';
+import { Title } from './components/Title';
+import { CgPhone , CgMail , CgFacebook , CgMoreO ,FcGallery } from "react-icons/cg";
+
+import './App.css';
+
+const endpoint = 'https://sheetdb.io/api/v1/rskuexkzg2l2t';
+
 function App() {
-  const [hide, setHide] = useState(false);
-  const [data,setData] = useState([]);
-
-  const callApi = async () => {
-    try {
-      const res = await axios.get(endpoint);
-      const data = res.data;
-      setData(data);
-    } catch (error) {
-      console.error('Error fetching data:', error);
-    }
-  };
-  useEffect(() => {
-    callApi();
-  }, []);
   return (
-    
-    <main id="main">
-      <div className='leftPort'>
-        <ImageProfile image="/src/assets/react.svg"/>
-       <Title title="panicha panicha">
-            <h3>ตำแหน่ง Font end</h3>
-       </Title>
-
-       <Title title="Contact">
-        <p>วันเกิด {moment("2003/07/01").format("D MMM YYYY")}</p>
-          <p style={{display:hide? 'none':'block'}} >Tel : 0652639642</p>
-          <button onClick={()=> setHide(!hide)} >{hide? 'Show':'Hide'}</button>
-
-          <p>Email : panichaboomjail262@gmail.com</p>
-          <p>www.panicha.coom</p>
-       </Title>
-       
-       <Title title="Eduction">
-          <p>
-            ปริญาตรี .....
-          </p>
-          <p>
-            มหาลัยราชภัฏสวนสุนันทา
-          </p>
-       </Title>
-       
-      </div>
-      <div className='rightPort'>
-        <Title title="profile">
-        <p>มนุษยสัมพันธ์ดี มีความรับผิดชอบ มีความตั้งใจที่จะพัฒนาตัวเองอยู่ตลอดเวลา พร้อมเรียนรู้และเปิดรับสิ่งใหม่ๆอยู่เสมอ</p>
-       </Title>
-       <Title title="profile">
-        <p>มนุษยสัมพันธ์ดี มีความรับผิดชอบ มีความตั้งใจที่จะพัฒนาตัวเองอยู่ตลอดเวลา พร้อมเรียนรู้และเปิดรับสิ่งใหม่ๆอยู่เสมอ</p>
-       </Title>
-       <Title title="Work Experience">
-       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis quis aliquid expedita maxime alias. Tempora voluptates aliquid deleniti sed accusamus!</p>
-       </Title>
-       <Title title="skills">
-          <p>HTML</p>
-          <p>CSS</p>
-          <p>React.Js</p>
-          <p>Next.Js</p>       
-        </Title>
-        <Title title="เพื่อนร่วมชั้นเรียน">
-          {data.map((record)=>{
-            return(
-              <div key={record.name}>
-                <p>{record.name}</p>
-                <p>{record.position}</p>
-                <p>{record.date}</p>
+    <div>
+      <nav>
+        <div className="container">
+          <div className="nav-con">
+            <div className="logo">
+              <a href="#">JAI</a>
+            </div>
+            <ul className="menu">
+              <li><a href="#" className="header-nav-link">PORTFOLIO</a></li>
+              <li><a href="#" className="header-nav-link">ABOUT</a></li>
+              <li><a href="#" className="header-nav-link">CONTACT</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <div className='container'>
+        <section className="hero">
+          <div className='leftPort'>
+            <div className='profile-me'>
+              <ImageProfile image="/src/assets/me.jpg"/>
+            </div>
+            <div className='data-me'>
+              <Title title="Education">
+                <p>Suan Sunandha Rajabhat University </p>
+                <p>Faculty of Science and Technology </p>
+                <p>Information Technology Program Junior</p>
+              </Title>
+              <div className="brix---inner-container-547px">
+                <div className="brix---mg-bottom-40px">
+                  <h3 className="h4 wavy-underline">My Skills</h3>
+                  <div className="container-box">
+                    <div className="box">
+                      <p>- CSS</p>
+                    </div>
+                    <div className="box">
+                      <p>- Figma</p>
+                    </div>
+                    <div className="box">
+                      <p>- HTML</p>
+                    </div>
+                    <div className="box">
+                      <p>- Canvas</p>
+                    </div>
+                    <div className="box">
+                      <p>- PHP</p>
+                    </div>
+                    <div className="box">
+                      <p>- Nomad</p>
+                    </div>
+                  </div>
+                </div>
               </div>
-            )
-          })}
-        </Title>
+              <Title title="Strengths">
+                <p>Excellent people skills, responsible, and always striving for self-improvement. Open to learning and new experiences.</p>
+              </Title>
+            </div>
+          </div>
+          <div className='rightPort'>
+            <div className='profile-me'>
+              <div className='about-me'>
+                <div className='text-about-me'>
+                  <h1>Panicha Likitsupin</h1>
+                  <div className="brix---inner-container-547px">
+                    <div className="brix---mg-bottom-40px">
+                      <div className="container-box">
+                        <div className="box">
+                          <p><CgPhone /> 065-263-9642</p>
+                        </div>
+                        <div className="box">
+                          <p><CgFacebook /> Panicha Likitsupin</p>
+                        </div>
+                        <div className="box">
+                          <p><CgMoreO /> littlejai</p>
+                        </div>
+                        <div className="box">
+                          <p><CgMail /> panichaboomjail262@gmail.com</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <Title title="position">
+                    <p><FcGallery /> UX/UI Designer.</p>                  
+                  </Title>
+                </div>
+              </div>
+            </div>
+            <div className='data-me'>
+              <Title title="Experience">
+                <p>Volunteering in a project to promote the potential of out-of-school children, fostering perseverance for learning towards happiness.</p>
+              </Title>
+              <Title title="Objective">
+                  <p>- To learn and improve web design and application development skills.</p>
+                  <p>- To practice and develop my teamwork skills.</p>
+                  <p>- To develop myself to have knowledge and skills that meet the market demands.</p>
+              </Title>
+              <Title title="Performance">
+                <p>- Creating a 3D model of the lotus throwing tradition in Samut Prakan Province in VR format.</p>
+                <p>- Completed the Figma Design Training Course from Futureskill.</p>
+                <p>- Designed a website in Figma for youth in Chonburi to access information and project status of the EESF under the KSF project.</p>
+              </Title>
+            </div>
+          </div>
+        </section>
       </div>
-    </main>
-    
-  )
+
+    </div>
+  );
 }
 
-export default App
+export default App;

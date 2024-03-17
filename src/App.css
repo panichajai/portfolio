@@ -1,14 +1,94 @@
-#main{
-  display: flex;
-  height: 100vh;
+#root {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: 0;
 }
+.container {
+  width: 90%;
+  max-width: 1440px;
+  justify-content: center;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #fff;
+}
+nav{
+  padding: 2rem ;
+  background-color: #fff;
+}
+h3 {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  font-family: Heading Font, Palatino Linotype, sans-serif;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 30px;
+}
+.h3{
+  color: #18473b;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  font-family: Heading Font, Palatino Linotype, sans-serif;
+  font-size: 2.5rem;
+  font-weight: 400;
+  line-height: 130%;
+}
+.h5{
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  white-space: nowrap;
+  margin-bottom: 20px;
+  font-family: commuters-sans, sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 20px;
+}
+.nav-con{
+  display: flex;/**/
+  justify-content: space-between;/*แบ่งกล่อง ซ้าย ขวา จัดแนวนอน*/
+}
+.logo a{
+  font-size: 2rem;/*ขนาดตัวหนังสือ*/
+  color: #18473b;/*สีตัวหนังสือ*/
+  text-decoration: none;/*เส้นใต้*/
+  
+}
+.menu{
+  display: flex;/*เรียงเป็นแนวนอน*/
+  list-style: none; /*ลบจุดไข่ปลา*/
+  align-items: center;/*ตรงกลาง จัดแนวตั้ง*/
+}
+.menu li{
+  margin: 0 1rem;/*ค่าแรงบนล่าง ค่าที่2 ซ้าย ขวา*/
 
+}
+.menu a{
+  color: #18473b;/*สีตัวหนังสือ*/
+  text-decoration: none;
+}
+.header-nav-link{
+  color: #18473b;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  border-bottom: 14px solid rgba(0, 0, 0, 0);
+  padding: 0;
+  font-family: commuters-sans, sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 20px;
+  transition: color .3s;    
+}
+.hero{
+  background-color: #fff;
+  display: flex;
+}
 .leftPort{
-  background-color: #242424;
+  background-color: #F1E6DE;
   width: 400px;
   flex-shrink: 0;
   padding: 30px;
-  text-align: center;
+  /* text-align: center; */
 }
 .leftPort p{
   color: #fff;
@@ -18,20 +98,18 @@
 }
 
 .rightPort{
-  background-color: gray;
-  width: 100%;
-  flex-grow: 1;
-  padding: 4rem;
+  background-color: #FAF5F1;
+  /* background-color: #fff; */
+  padding: 30px;
+  width: 900px;
+  flex-shrink: 0;
 }
-
 .imageProfile{
-  width: 150px;
-  height: 150px;
+  width: 400px;
+  height: 500px;
   margin: 0 auto;
-  background-color: #fff;
-  border-radius: 50%;
   overflow: hidden;
-  padding: 1rem;
+  margin-top: 60px;
   margin-bottom: 30px;
 }
 
@@ -42,13 +120,78 @@
 }
 
 .titleProt h2{
-  color: greenyellow;
+  color: black;
 }
-p{
-  margin-bottom: 15px;
-  font-weight: 500;
+.brix---inner-container-547px{
+  max-width: 574px;
+  box-sizing: border-box;
+  display: block;
+}
+.brix---mg-bottom-40px{
+  margin-bottom: 40px;
+  box-sizing: border-box;
+  display: block;
+}
+.h4{
+  text-align: left;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  white-space: normal;
+  margin-bottom: 20px;
+  font-family: commuters-sans, sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 20px;
+}
+.wavy-underline{
+  background-image: url("https://assets-global.website-files.com/5a5d440a11f84b0001ea53f4/659c6147ca7b0901d79e0f72_wavy-line.svg");
+  background-repeat: repeat-x;
+  background-size: 40px;
+}
+.h4.wavy-underline{
+  background-position: 50% 90%;
+  margin-bottom: 30px;
+  padding-bottom: 15px;
+  display: inline-block;
+  color: black;
+}
+.left-p-text {
+  margin-top: -10px; /* เพิ่ม margin-top เข้าไป */
+  p{
+    color: black;
+    margin-top: -20px;
+  }
+}
+.right-p-text {
+  margin-top: -10px; /* เพิ่ม margin-top เข้าไป */
+  p{
+    color: black;
+    margin-top: -20px;
+  }
+}
+.container-box {
+  display: grid;
+  margin-top: -10px;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 5px;
+  .box {
+    margin-top: -30px;
+    font-size: 11px;
+  }
+}
+.profile-me{
+  height: 500px;
+}
+.data-me{
+  height: 500px;
+}
+.about-me {
+  .text-about-me {
+    margin-top: -20px; /* ปรับ margin-top เป็น -10px */
+    font-family: Heading Font, Palatino Linotype, sans-serif;
+    font-size: 1.5rem;
+    font-weight: 400;
+    line-height: 130%;
+  }
 }
 
-#root {
-  width: 100%;
-}
